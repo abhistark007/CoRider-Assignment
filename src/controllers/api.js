@@ -13,6 +13,6 @@ export const fetchChats=async(pageNumber)=>{
     }catch(e){
         // console.log(e.response.data.ok);
         toast.error(e.response.data.error);
-        return e.response.data.ok;
+        return false;
     }
 }
