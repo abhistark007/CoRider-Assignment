@@ -1,1 +1,29 @@
-  
+  .footer{
+    display: flex;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 30px;
+    padding-right: 30px;
+    justify-content: space-between;
+    background-color: #FFFFFF;
+    position: sticky;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 20;
+  }
+
+  .footer__icons{
+    display: flex;
+    gap: 10px;
+  }
+
+  .footer > input{
+    outline: none;
+    border: none;
+    flex: 1;
+  }
+
+  .footer__icons > img {
+    cursor: pointer;
+  }
