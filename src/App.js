@@ -51,6 +51,7 @@ function App() {
     <div className="App">
        
         <Header to={to} from={from} title={title}/>
+        
         <InfiniteScroll
           dataLength={chats.length} //This is important field to render the next data
           next={dum}
