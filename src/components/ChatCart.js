@@ -15,7 +15,7 @@ function ChatCart({message,pic,self}) {
         viewport={{ once: true }}
         className='c1'
         >
-           <div className='chartcart__right'>
+           <div className='chartcart__right font-link'>
             <p>{message}</p>
            </div>
             <Avatar src={pic} />
@@ -27,12 +27,12 @@ function ChatCart({message,pic,self}) {
     <motion.div 
     initial={{ opacity: 0 }}
   whileInView={{ opacity: 1 }}
-  transition={{ delay: 0.65 }}
+  transition={{ delay: 0.5 }}
   viewport={{ once: true }}
     className='c2'
     >
         <Avatar src={pic} />
-        <div className='chartcart'>
+        <div className='chartcart font-link'>
             <p>{message}</p>
         </div>
     </motion.div>
