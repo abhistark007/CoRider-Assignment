@@ -11,10 +11,13 @@ function ChatCart({message,pic,self}) {
         <motion.div 
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
-        transition={{ delay: 0.8 }}
+        transition={{ delay: 0.5 }}
         viewport={{ once: true }}
-        className='chartcart__right'>
+        className='c1'
+        >
+           <div className='chartcart__right'>
             <p>{message}</p>
+           </div>
             <Avatar src={pic} />
         </motion.div>
       )
@@ -24,11 +27,14 @@ function ChatCart({message,pic,self}) {
     <motion.div 
     initial={{ opacity: 0 }}
   whileInView={{ opacity: 1 }}
-  transition={{ delay: 0.8 }}
+  transition={{ delay: 0.65 }}
   viewport={{ once: true }}
-    className='chartcart'>
+    className='c2'
+    >
         <Avatar src={pic} />
-        <p>{message}</p>
+        <div className='chartcart'>
+            <p>{message}</p>
+        </div>
     </motion.div>
   )
 }
