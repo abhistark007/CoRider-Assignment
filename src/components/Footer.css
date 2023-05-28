@@ -7,10 +7,13 @@
     justify-content: space-between;
     background-color: #FFFFFF;
     position: sticky;
-    bottom: 0;
+    bottom: 10px;
     left: 0;
     right: 0;
     z-index: 20;
+    margin-left: 30px;
+    margin-right: 30px;
+    border-radius: 10px;
   }
 
   .footer__icons{
