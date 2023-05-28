@@ -20,7 +20,10 @@ export const chatsSlice = createSlice({
       state.to=action.payload.to;
     },
     addChatsResults: (state,action)=>{
-        state.value.push(action.payload);
+        action.payload.chats.map((chat)=>{
+            state.value.push(chat);
+        })
+        // state.value.push(action.payload.chats);
     }
   },
 })
