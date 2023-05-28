@@ -1,16 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
-// import { useDispatch } from 'react-redux';
 import { fetchChats } from './controllers/api';
-// import { toast } from 'react-toastify';
-// import { addChatsResults, fetchChatsResults } from './store/chatsSlice';
 import InfiniteScroll from 'react-infinite-scroll-component';
 import ChatCart from './components/ChatCart';
 import Header from './components/Header';
+import Footer from './components/Footer';
 
 function App() {
 
-  // const dispatch=useDispatch();
   const [from,setFrom]=useState("");
   const [to,setTo]=useState("");
   const [title,setTitle]=useState("");
@@ -72,6 +69,8 @@ function App() {
             }
             </div>
           </InfiniteScroll>
+
+          <Footer to={to}/>
        
     </div>
   );
