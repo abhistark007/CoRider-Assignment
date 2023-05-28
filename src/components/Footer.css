@@ -19,6 +19,7 @@
   .footer__icons{
     display: flex;
     gap: 10px;
+    position: relative;
   }
 
   .footer > input{
@@ -29,4 +30,26 @@
 
   .footer__icons > img {
     cursor: pointer;
+  }
+
+  .footer__popup{
+    position: absolute;
+    top: -50px;
+    right: 30px;
+    width: 130px;
+    height: 50px;
+    border-radius: 50px;
+    background-color: #008000;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .footer__popup > img {
+    object-fit: contain;
+    width: 20px;
+    cursor: pointer;
+  }
+  .footer__popup > img:hover{
+    scale: 1.1;
   }
