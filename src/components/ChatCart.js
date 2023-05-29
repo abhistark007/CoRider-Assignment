@@ -2,8 +2,9 @@ import React from 'react'
 import Avatar from '@mui/material/Avatar';
 import './ChatCart.css'
 import { motion } from "framer-motion"
+import kycIcon from '../assets/kycLogo.png';
 
-function ChatCart({message,pic,self}) {
+function ChatCart({message,pic,self,isKycVerified}) {
 
 
   if(self===true){
@@ -18,7 +19,10 @@ function ChatCart({message,pic,self}) {
            <div className='chartcart__right font-link'>
             <p>{message}</p>
            </div>
+            <div className="avatar">
             <Avatar src={pic} />
+            {isKycVerified && <img src={kycIcon} alt="kycIcon"/>}
+            </div>
         </motion.div>
       )
   }
@@ -31,7 +35,10 @@ function ChatCart({message,pic,self}) {
   viewport={{ once: true }}
     className='c2'
     >
+        <div className="avatar">
         <Avatar src={pic} />
+        {isKycVerified && <img src={kycIcon} alt="kycIcon"/>}
+        </div>
         <div className='chartcart font-link'>
             <p>{message}</p>
         </div>
