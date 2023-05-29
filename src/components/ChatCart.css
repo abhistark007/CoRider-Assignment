@@ -43,6 +43,9 @@
     font-size: 14px;
     line-height:17px
 }
+.c1{
+    justify-content: end;
+}
 
 .font-link {
     font-family: 'Mulish', sans-serif;
