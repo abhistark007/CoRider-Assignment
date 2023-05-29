@@ -64,7 +64,7 @@ function App() {
             
             {
               chats.map((chat,index)=>{
-                return <ChatCart key={index} message={chat.message} pic={chat.sender.image} self={chat.sender.self} />
+                return <ChatCart key={index} isKycVerified={chat.sender.is_kyc_verified} message={chat.message} pic={chat.sender.image} self={chat.sender.self} />
               })
             }
             </div>
