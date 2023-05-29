@@ -21,7 +21,6 @@ function App() {
 
     if (data !== false) {
       console.log("DATA-> ", data.data);
-      // dispatch(fetchChatsResults(data.data))
       setChats(n=>[...data.data.chats]);
       setFrom(n=>data.data.from);
       setTo(n=>data.data.to);
@@ -35,30 +34,15 @@ function App() {
 
     if (data !== false) {
       console.log(`DATA page ${page}-> `, data.data);
-      // dispatch(addChatsResults(data.data))
       setChats([...chats, ...data.data.chats]);
     }
   }
 
   useEffect(() => {
     apiTesting();
-    // scrollToBottom();
   }, [])
 
 
-  const handleScroll = () => {
-    const { scrollTop } = scrollableDivRef.current;
-
-    // Check if user has scrolled to the top
-    if (scrollTop === 0) {
-      dum();
-    }
-  };
-
-  // const scrollToBottom = () => {
-  //   const scrollableDiv = scrollableDivRef.current;
-  //   scrollableDiv.scrollIntoView({ block: "end" });
-  // };
 
 
   return (
@@ -66,6 +50,7 @@ function App() {
 
       <Header to={to} from={from} title={title} />
       <div className='app__body'
+      id="scrollableDiv"
       style={{
         display: 'flex',
         flexDirection: 'column-reverse',
@@ -73,14 +58,12 @@ function App() {
         maxHeight: '100vh',
         
       }}
-      onScroll={handleScroll}
       ref={scrollableDivRef}
       >
         <InfiniteScroll
           style={{display:"flex", flexDirection:"column-reverse",}}
           dataLength={chats.length} //This is important field to render the next data
           next={dum}
-          scrollToBottom={true}
           // style={{ display: 'flex', flexDirection: 'column-reverse' }} //To put endMessage and loader to the top.
           // inverse={true} //
           
@@ -92,7 +75,6 @@ function App() {
             </p>
           }
           inverse={true}
-          useWindow={false}
           scrollableTarget="scrollableDiv"
         >
           
@@ -100,9 +82,9 @@ function App() {
             {
               chats.map((chat, index) => {
                 if(index===0){
-                  return <div style={{marginBottom:"400px"}}><ChatCart key={index} index={index} isKycVerified={chat.sender.is_kyc_verified} message={chat.message} pic={chat.sender.image} self={chat.sender.self} /></div>
+                  return <div style={{marginBottom:"400px"}}><ChatCart key={index} isKycVerified={chat.sender.is_kyc_verified} message={chat.message} pic={chat.sender.image} self={chat.sender.self} /></div>
                 }
-                return <ChatCart key={index} index={index} isKycVerified={chat.sender.is_kyc_verified} message={chat.message} pic={chat.sender.image} self={chat.sender.self} />
+                return <ChatCart key={index} isKycVerified={chat.sender.is_kyc_verified} message={chat.message} pic={chat.sender.image} self={chat.sender.self} />
               })
             }
           

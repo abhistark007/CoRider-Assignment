@@ -1,7 +1,7 @@
 import axios from "axios";
 // import { toast } from "react-toastify";
 
-// http://3.111.128.67/assignment/chat?page=0
+// https://3.111.128.67/assignment/chat?page=0
 const BASE_URL="http://3.111.128.67/assignment/chat?page=";
 
 export const fetchChats=async(pageNumber)=>{
